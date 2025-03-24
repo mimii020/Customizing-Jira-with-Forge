@@ -1,0 +1,22 @@
+modules:
+  jira:issuePanel:
+    - key: hello-forge-hello-world-issue-panel
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: Hello Forge
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+app:
+  runtime:
+    name: nodejs22.x
+  id: ari:cloud:ecosystem::app/2b8b1925-2ae1-4679-ad14-b27c96c0f61a
+permissions:
+  scopes:
+    - read:jira-work
